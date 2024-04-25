@@ -3,6 +3,7 @@ export const Routes = {
   TERMS_SCREEN: 'TermsScreen',
   STARSHIP_FEED_SCREEN: 'StarshipScreen',
   STARSHIP_DETAIL_SCREEN: 'StarshipScreenDetail',
+  PROFILE_SCREEN: 'ProfileScreen',
 } as const;
 
 
