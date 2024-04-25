@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native'
 
-export function ProfileScreen(props) {
+function ProfileScreen(props) {
   console.log("🚀 ~ ProfileScreen ~ props:", props);
   return (
     <View>
@@ -14,3 +14,5 @@ export function ProfileScreen(props) {
     </View>
   )
 }
+
+export default ProfileScreen;
