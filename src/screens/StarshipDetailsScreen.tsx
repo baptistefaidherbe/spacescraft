@@ -1,16 +1,12 @@
 import { Card, Text } from 'react-native-paper';
 import React from 'react';
 import { useImage } from '~/hook/useImage';
-import { starShip } from '~/type';
 import { Image } from 'react-native';
 
 export default function StarshipDetailsScreen({
   route,
-}: {
-  route: {
-    params: { item: starShip };
-  };
-}) {
+}: any
+) {
   const { item } = route.params;
   const source = useImage(item.name);
 
