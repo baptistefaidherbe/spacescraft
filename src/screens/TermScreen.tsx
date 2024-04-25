@@ -1,20 +1,10 @@
 import React from 'react';
-import { View, Image, Alert, ScrollView } from 'react-native';
-import { Appbar, Text } from 'react-native-paper';
+import { View, Image, ScrollView } from 'react-native';
+import { Text } from 'react-native-paper';
 
 export default function TermsScreen() {
-  function goBack() {
-    // We need to use the screen props `{navigation}` to navigate back
-    // it will be introduced in the next lesson `react-navigation`
-    Alert.alert('goBack pressed!');
-  }
-
   return (
     <ScrollView>
-      <Appbar.Header>
-        <Appbar.BackAction onPress={goBack} />
-        <Appbar.Content title='Terms and Conditions' />
-      </Appbar.Header>
       <View style={{ padding: 32 }}>
         <Text variant='bodyMedium' style={{ marginBottom: 24 }}>
           This Terms of Service, including all supplemental terms as amended

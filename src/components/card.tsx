@@ -2,11 +2,27 @@ import { Image } from 'react-native';
 import { Card, Text } from 'react-native-paper';
 import { starShip } from '~/type';
 import { useImage } from '~/hook/useImage';
+import { useNavigation } from '@react-navigation/native';
+import { Routes } from '~/navigation/Route';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 export default function CardComponent({ item }: { item: starShip }) {
+  type RootStackParamList = {
+    StarshipScreenDetail: { item: starShip };
+  };
+
+  type StarshipScreenNavigationProp = StackNavigationProp<
+    RootStackParamList,
+    'StarshipScreenDetail'
+  >;
+
   const source = useImage(item.name);
+  const navigation = useNavigation<StarshipScreenNavigationProp>();
+
   return (
-    <Card>
+    <Card
+      onPress={() => navigation.navigate(Routes.STARSHIP_DETAIL_SCREEN, { item })}
+    >
       <Image
         style={{
           height: 200,

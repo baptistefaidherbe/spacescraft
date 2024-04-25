@@ -10,6 +10,7 @@ import { starShip } from '~/type';
 // import { default as data } from '~/api/data.json';
 import { UseStarships } from '~/hook/useStarships';
 import { useState } from 'react';
+import { ScreenContainer } from '~/layout/ScreenContainer';
 
 const StarshipFeedScreen = () => {
   const { data, isLoading, isError, refetch } = UseStarships();
@@ -30,7 +31,7 @@ const StarshipFeedScreen = () => {
   };
 
   return (
-    <>
+    <ScreenContainer>
       <FlatList
         scrollEnabled={false}
         data={data.results as starShip[]}
@@ -42,7 +43,7 @@ const StarshipFeedScreen = () => {
           <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
         }
       />
-    </>
+    </ScreenContainer>
   );
 };
 

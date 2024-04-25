@@ -8,13 +8,14 @@ interface ScreenContainerProps {
   title?: string;
   children?: ReactNode;
   withScrollView?: boolean;
+  Isheader?: boolean;
 }
 
-export const ScreenContainer = ({ children }: ScreenContainerProps) => {
+export const ScreenContainer = ({ Isheader, children }: ScreenContainerProps) => {
   return (
     <ScrollView style={styles.container} nestedScrollEnabled={true}>
       <Offline />
-      <Header />
+      {Isheader && <Header />}
       {children}
     </ScrollView>
   );
