@@ -8,11 +8,11 @@ export default function StarshipDetailsScreen({
   route,
 }: {
   route: {
-    params: { item: starShip };
+    params: starShip;
   };
 }) {
-  const { item } = route.params;
-  const source = useImage(item.name);
+  const { name, crew, hyperdrive_rating } = route.params;
+  const source = useImage(name);
 
   return (
     <Card>
@@ -23,10 +23,10 @@ export default function StarshipDetailsScreen({
         }}
         source={source}
       />
-      <Text>{item.name}</Text>
-      <Text style={{ fontSize: 9 }}>{item.manufacturer}</Text>
-      <Text style={{ fontSize: 9 }}>{item.crew}</Text>
-      <Text style={{ fontSize: 9 }}>{item.hyperdrive_rating}</Text> 
+      <Text>{name}</Text>
+      <Text style={{ fontSize: 9 }}>{name}</Text>
+      <Text style={{ fontSize: 9 }}>{crew}</Text>
+      <Text style={{ fontSize: 9 }}>{hyperdrive_rating}</Text>
     </Card>
   );
 }

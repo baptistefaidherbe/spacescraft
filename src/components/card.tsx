@@ -8,7 +8,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 export default function CardComponent({ item }: { item: starShip }) {
   type RootStackParamList = {
-    StarshipScreenDetail: { item: starShip };
+    StarshipScreenDetail:  starShip ;
   };
 
   type StarshipScreenNavigationProp = StackNavigationProp<
@@ -21,7 +21,7 @@ export default function CardComponent({ item }: { item: starShip }) {
 
   return (
     <Card
-      onPress={() => navigation.navigate(Routes.STARSHIP_DETAIL_SCREEN, { item })}
+      onPress={() => navigation.navigate(Routes.STARSHIP_DETAIL_SCREEN, item)}
     >
       <Image
         style={{
